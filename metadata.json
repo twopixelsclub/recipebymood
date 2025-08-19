@@ -1,0 +1,5 @@
+{
+  "name": "Neera's Mood-Based Recipes",
+  "description": "A web application that helps users discover personalized recipe playlists from Neera Food Lab’s collection, curated by their current mood.",
+  "requestFramePermissions": []
+}
