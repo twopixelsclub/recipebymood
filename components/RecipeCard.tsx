@@ -29,15 +29,16 @@ const getYouTubeVideoId = (url: string): string | null => {
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     const [imageError, setImageError] = useState(false);
     const videoId = getYouTubeVideoId(recipe.videoLink);
-    const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` : '';
+    // 9:16 aspect thumbnail - use maxres or hq to approach vertical crop when available
+    const thumbnailUrl = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : '';
 
     const handleImageError = () => {
         setImageError(true);
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col text-left transition-transform duration-300 hover:scale-105">
-            <div className="aspect-video w-full bg-gray-100 flex items-center justify-center">
+        <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden flex flex-col text-left">
+            <div className="w-full bg-rose-50 flex items-center justify-center" style={{ aspectRatio: '9 / 16' }}>
                 {!imageError && thumbnailUrl ? (
                     <img
                         src={thumbnailUrl}
@@ -50,15 +51,15 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                     <div className="text-4xl text-gray-400" role="img" aria-label="Fallback food icon">🍽️</div>
                 )}
             </div>
-            <div className="p-5 flex flex-col flex-grow">
-                <h4 className="font-bold text-lg text-[#1e1e1e] leading-tight mb-2 flex-grow">{recipe.name}</h4>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{recipe.summary}</p>
+            <div className="p-5 flex flex-col flex-grow gap-2">
+                <h4 className="text-black text-[20px] font-semibold leading-[23px] tracking-[-0.8px]">{recipe.name}</h4>
+                <p className="text-black text-[14px] font-medium leading-[130%] tracking-[-0.56px]">{recipe.summary}</p>
                 <a
                     href={recipe.videoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Watch recipe for ${recipe.name} on YouTube`}
-                    className="mt-auto w-full text-center bg-[#FF0060] text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-300 hover:bg-[#D90052] focus:outline-none focus:ring-2 focus:ring-[#FF0060] focus:ring-offset-2"
+                    className="mt-2 w-full max-w-[540px] text-center text-white py-2 px-4 rounded-lg border border-[#FF0060] bg-[#FF0060] hover:bg-[#C60B51] focus:outline-none focus:ring-2 focus:ring-[#FF0060]"
                 >
                     Watch recipe
                 </a>
