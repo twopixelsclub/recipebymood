@@ -35,7 +35,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ mood, onGoBack }) => {
             </p>
 
             {recipes.length > 0 ? (
-                <div className="w-full max-w-3xl flex flex-col gap-4">
+                <div className="w-full max-w-2xl flex flex-col gap-4">
                     {recipes.map((recipe, index) => (
                         <RecipeCard key={`${recipe.videoLink}-${index}`} recipe={recipe} />
                     ))}
