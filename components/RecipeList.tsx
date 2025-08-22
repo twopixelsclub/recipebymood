@@ -20,7 +20,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ mood, onGoBack }) => {
 
     return (
         <div className="w-full flex flex-col items-center text-center animate-fade-in">
-            <div className="w-full bg-rose-50 border-b border-rose-100 py-4">
+            <div className="w-full bg-rose-50 border-b border-rose-100 py-4 mt-8">
                 <div className="max-w-4xl mx-auto flex flex-col items-center px-4 text-center">
                     <button onClick={onGoBack} className="flex items-center gap-2 text-[#1e1e1e] mb-2 hover:opacity-80">
                         <img src="/recipebymood/ArrowLeft.png" alt="Go back" className="h-4 w-4" />
