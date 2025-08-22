@@ -51,10 +51,10 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                     <div className="text-3xl text-gray-400" role="img" aria-label="Fallback food icon">🍽️</div>
                 )}
             </div>
-            <div className="flex flex-col justify-between gap-2 flex-1 h-full py-3">
+            <div className="flex flex-col justify-start flex-1 h-full py-3">
                 <div className="text-left">
-                    <h4 className="text-black text-left text-[20px] font-semibold leading-[23px] tracking-[-0.8px]">{recipe.name}</h4>
-                    <p className="text-black text-left text-[14px] font-medium leading-[1.3] tracking-[-0.56px]">{recipe.summary}</p>
+                    <h4 className="text-black text-left text-[20px] font-semibold leading-[23px] tracking-[-0.8px] mb-3">{recipe.name}</h4>
+                    <p className="text-black text-left text-[14px] font-medium leading-[1.3] tracking-[-0.56px] mb-6">{recipe.summary}</p>
                 </div>
                 <a
                     href={recipe.videoLink}
