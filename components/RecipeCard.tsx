@@ -37,33 +37,29 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     };
 
     return (
-        <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden flex flex-col text-left max-w-[560px] mx-auto">
-            <div className="flex gap-4 p-4">
-                <div className="shrink-0 w-[90px] md:w-[110px] bg-rose-50 rounded-xl overflow-hidden flex items-center justify-center" style={{ aspectRatio: '9 / 16' }}>
-                    {!imageError && thumbnailUrl ? (
-                        <img
-                            src={thumbnailUrl}
-                            alt={`Thumbnail for ${recipe.name}`}
-                            className="w-full h-full object-cover"
-                            onError={handleImageError}
-                            loading="lazy"
-                        />
-                    ) : (
-                        <div className="text-3xl text-gray-400" role="img" aria-label="Fallback food icon">🍽️</div>
-                    )}
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                    <h4 className="text-black text-[20px] font-semibold leading-[23px] tracking-[-0.8px]">{recipe.name}</h4>
-                    <p className="text-black text-[14px] font-medium leading-[130%] tracking-[-0.56px]">{recipe.summary}</p>
-                </div>
+        <div className="w-full bg-white border border-[#EAEAEA] rounded-2xl flex items-start gap-6 p-2">
+            <div className="shrink-0 w-[90px] md:w-[110px] bg-rose-50 rounded-xl overflow-hidden flex items-center justify-center" style={{ aspectRatio: '9 / 16' }}>
+                {!imageError && thumbnailUrl ? (
+                    <img
+                        src={thumbnailUrl}
+                        alt={`Thumbnail for ${recipe.name}`}
+                        className="w-full h-full object-cover"
+                        onError={handleImageError}
+                        loading="lazy"
+                    />
+                ) : (
+                    <div className="text-3xl text-gray-400" role="img" aria-label="Fallback food icon">🍽️</div>
+                )}
             </div>
-            <div className="px-4 pb-4">
+            <div className="flex flex-col gap-2 flex-1">
+                <h4 className="text-black text-[20px] font-semibold leading-[23px] tracking-[-0.8px]">{recipe.name}</h4>
+                <p className="text-black text-[14px] font-medium leading-[130%] tracking-[-0.56px]">{recipe.summary}</p>
                 <a
                     href={recipe.videoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Watch recipe for ${recipe.name} on YouTube`}
-                    className="w-full text-center text-white py-2 px-4 rounded-lg border border-[#FF0060] bg-[#FF0060] hover:bg-[#C60B51] focus:outline-none focus:ring-2 focus:ring-[#FF0060]"
+                    className="w-full max-w-[540px] text-center text-white py-2 px-4 rounded-lg border border-[#FF0060] bg-[#FF0060] hover:bg-[#C60B51] focus:outline-none focus:ring-2 focus:ring-[#FF0060]"
                 >
                     Watch recipe
                 </a>
