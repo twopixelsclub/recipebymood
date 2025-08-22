@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 
 const Header: React.FC = () => {
     const candidateSources = [
-        `${import.meta.env.BASE_URL}NeeraFoodlab_Logo.svg`,
-        `/recipebymood/NeeraFoodlab_Logo.svg`,
-        `/NeeraFoodlab_Logo.svg`,
+        `${import.meta.env.BASE_URL}logo.png`,
+        `/recipebymood/logo.png`,
+        `/logo.png`,
     ];
     const [srcIndex, setSrcIndex] = useState(0);
 
