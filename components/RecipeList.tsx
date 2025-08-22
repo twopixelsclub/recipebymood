@@ -27,13 +27,13 @@ const RecipeList: React.FC<RecipeListProps> = ({ mood, onGoBack }) => {
                         <span className="text-sm">Go back</span>
                     </button>
                     <h3 className="text-[28px] font-semibold tracking-[-1.12px]">Yay! You’re in a {mood.name} Mood! {mood.emoji}</h3>
-                    <p className="text-black italic text-[16px] font-normal tracking-[-0.32px] mt-1">Here are some handpicked recipes just for you—let's cook up something special together!</p>
                 </div>
             </div>
 
+            <p className="w-full text-center text-black italic text-[16px] font-normal tracking-[-0.32px] mt-4">Here are some handpicked recipes just for you—let's cook up something special together!</p>
 
             {recipes.length > 0 ? (
-                <div className="w-full max-w-2xl flex flex-col gap-4 mt-4">
+                <div className="w-full max-w-[540px] px-4 flex flex-col gap-6 items-center mt-4">
                     {recipes.map((recipe, index) => (
                         <RecipeCard key={`${recipe.videoLink}-${index}`} recipe={recipe} />
                     ))}
