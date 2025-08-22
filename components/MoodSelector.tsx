@@ -32,14 +32,14 @@ const MoodCard: React.FC<{ mood: Mood; onClick: () => void; }> = ({ mood, onClic
 
 const MoodSelector: React.FC<MoodSelectorProps> = ({ onSelectMood }) => {
     return (
-        <div className="w-full max-w-3xl mx-auto flex flex-col items-center text-center">
-            <div className="w-full rounded-2xl bg-rose-50 border border-rose-100 py-6 px-6">
-                <p className="text-rose-700 mb-1">Namaste from Neera’s Food Lab 🙏🏻</p>
-                <h2 className="text-3xl md:text-[34px] font-extrabold tracking-tight mb-2">How are you feeling today?</h2>
-                <p className="text-gray-600">Pick your mood and unlock a recipe surprise. Let your feelings decide!</p>
+        <div className="w-full mx-auto flex flex-col items-center text-center">
+            <div className="w-full flex flex-col justify-center items-center gap-3 self-stretch bg-rose-50 py-6 px-4">
+                <p className="text-black/70 text-center text-[16px] font-normal tracking-[-0.32px]">Namaste from Neera’s Food Lab 🙏🏻</p>
+                <h2 className="text-black text-center text-[28px] font-semibold tracking-[-1.12px]">How are you feeling today?</h2>
+                <p className="text-black italic text-[16px] font-normal tracking-[-0.32px]">Pick your mood and unlock a recipe surprise. Let your feelings decide!</p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-3xl">
                 {moods.map((mood) => (
                     <MoodCard key={mood.name} mood={mood} onClick={() => onSelectMood(mood)} />
                 ))}
