@@ -11,36 +11,49 @@ const moods: Mood[] = [
     { name: 'Healthy', emoji: '🥗' },
     { name: 'Adventure', emoji: '⭐' },
     { name: 'Lazy', emoji: '😴' },
-    { name: 'Sweet', emoji: '🧁' },
+    { name: 'Sweet', emoji: '🍬' },
     { name: 'Festive', emoji: '🎉' },
-    { name: 'Surprise', emoji: '🎲' },
 ];
 
-const MoodButton: React.FC<{ mood: Mood, onClick: () => void }> = ({ mood, onClick }) => (
+const MoodCard: React.FC<{ mood: Mood; onClick: () => void; }> = ({ mood, onClick }) => (
     <button
         onClick={onClick}
+        className="flex flex-col items-center justify-center gap-3 bg-white border border-rose-100 rounded-2xl py-6 px-8 shadow-sm hover:shadow-md transition-all duration-200 hover:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
         aria-label={`Find recipes for a ${mood.name} mood`}
-        className="w-full text-lg font-semibold bg-white border border-gray-200 rounded-xl py-3 px-6 text-center transition-all duration-300 hover:shadow-md hover:border-[#FF0060] focus:outline-none focus:ring-2 focus:ring-[#FF0060] focus:ring-offset-2"
     >
-        {mood.name} {mood.emoji}
+        <div className="text-4xl" aria-hidden>
+            {mood.emoji}
+        </div>
+        <div className="text-rose-800 font-semibold">
+            {mood.name}
+        </div>
     </button>
 );
 
 const MoodSelector: React.FC<MoodSelectorProps> = ({ onSelectMood }) => {
     return (
-        <div className="w-full max-w-md mx-auto flex flex-col items-center text-center p-4">
-            <div className="bg-white/50 rounded-2xl p-6 w-full">
-                <p className="text-lg">Namaste from Neera's Food Lab 🙏</p>
-                <h2 className="text-3xl sm:text-4xl font-bold my-2">Which Flavor Matches Your Mood Today?</h2>
-                <p className="text-gray-600 mb-8">Let your feelings decide! Pick your mood and unlock a recipe surprise.</p>
+        <div className="w-full max-w-3xl mx-auto flex flex-col items-center text-center">
+            <div className="w-full rounded-2xl bg-rose-50 border border-rose-100 py-6 px-6">
+                <p className="text-rose-700 mb-1">Namaste from Neera’s Food Lab 🙏🏻</p>
+                <h2 className="text-3xl md:text-[34px] font-extrabold tracking-tight mb-2">How are you feeling today?</h2>
+                <p className="text-gray-600">Pick your mood and unlock a recipe surprise. Let your feelings decide!</p>
             </div>
 
-            <div className="text-6xl my-8 animate-bounce">😊</div>
-            
-            <div className="w-full space-y-4">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
                 {moods.map((mood) => (
-                    <MoodButton key={mood.name} mood={mood} onClick={() => onSelectMood(mood)} />
+                    <MoodCard key={mood.name} mood={mood} onClick={() => onSelectMood(mood)} />
                 ))}
+            </div>
+
+            <div className="w-full flex justify-center mt-5">
+                <button
+                    onClick={() => onSelectMood({ name: 'Surprise', emoji: '🎲' })}
+                    className="flex flex-col items-center justify-center gap-3 bg-white border border-rose-100 rounded-2xl py-6 px-12 shadow-sm hover:shadow-md transition-all duration-200 hover:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
+                    aria-label="Find recipes with a Surprise mood"
+                >
+                    <div className="text-4xl" aria-hidden>🎲</div>
+                    <div className="text-rose-800 font-semibold">Surprise</div>
+                </button>
             </div>
         </div>
     );
