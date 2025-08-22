@@ -30,7 +30,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ mood, onGoBack }) => {
                 </div>
             </div>
 
-            <p className="w-full text-center text-black italic text-[16px] font-normal tracking-[-0.32px] mt-4">Here are some handpicked recipes just for you—let's cook up something special together!</p>
+            <p className="w-full text-center text-black italic text-[16px] font-normal tracking-[-0.32px] pt-8 pb-6">Here are some handpicked recipes just for you—let's cook up something special together!</p>
 
             {recipes.length > 0 ? (
                 <div className="w-full max-w-[540px] px-4 flex flex-col gap-6 items-center mt-4">
