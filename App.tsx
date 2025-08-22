@@ -26,7 +26,7 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen text-[#1e1e1e] flex flex-col items-center p-4 sm:p-6 md:p-8">
+        <div className="min-h-screen text-[#1e1e1e] flex flex-col items-center px-4 sm:px-6 md:px-8">
             <Header />
             <main className="w-full max-w-4xl mx-auto flex-grow flex flex-col items-center mt-8">
                 <div className={`w-full transition-opacity duration-500 ${view === 'mood' ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
