@@ -23,7 +23,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ mood, onGoBack }) => {
             <div className="w-full bg-rose-50 border-b border-rose-100 py-4">
                 <div className="max-w-4xl mx-auto flex flex-col items-center px-4 text-center">
                     <button onClick={onGoBack} className="flex items-center gap-2 text-[#1e1e1e] mb-2 hover:opacity-80">
-                        <img src="/recipebymood/ArrowLeft.png" alt="Go back" className="h-4 w-4" />
+                        <img src={`${import.meta.env.BASE_URL}ArrowLeft.png`} alt="Go back" className="h-4 w-4" />
                         <span className="text-sm">Go back</span>
                     </button>
                     <h3 className="text-[28px] font-semibold tracking-[-1.12px]">Yay! You’re in a {mood.name} Mood! {mood.emoji}</h3>
