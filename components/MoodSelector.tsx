@@ -45,7 +45,7 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({ onSelectMood }) => {
                 ))}
             </div>
 
-            <div className="w-full flex justify-center mt-5">
+            <div className="w-full flex justify-center mt-5 pb-6">
                 <button
                     onClick={() => onSelectMood({ name: 'Surprise', emoji: '🎲' })}
                     className="flex flex-col items-center justify-center gap-3 bg-white border border-rose-100 rounded-2xl py-6 px-12 shadow-sm hover:shadow-md transition-all duration-200 hover:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
