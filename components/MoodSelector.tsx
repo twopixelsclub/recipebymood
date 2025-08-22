@@ -33,7 +33,7 @@ const MoodCard: React.FC<{ mood: Mood; onClick: () => void; }> = ({ mood, onClic
 const MoodSelector: React.FC<MoodSelectorProps> = ({ onSelectMood }) => {
     return (
         <div className="w-full mx-auto flex flex-col items-center text-center">
-            <div className="w-full flex flex-col justify-center items-center gap-3 self-stretch bg-rose-50 py-6 px-4 mt-8">
+            <div className="w-full flex flex-col justify-center items-center gap-3 self-stretch bg-rose-50 py-6 px-4">
                 <p className="text-black/70 text-center text-[16px] font-normal tracking-[-0.32px]">Namaste from Neera’s Food Lab 🙏🏻</p>
                 <h2 className="text-black text-center text-[28px] font-semibold tracking-[-1.12px]">How are you feeling today?</h2>
                 <p className="text-black italic text-[16px] font-normal tracking-[-0.32px]">Pick your mood and unlock a recipe surprise. Let your feelings decide!</p>
